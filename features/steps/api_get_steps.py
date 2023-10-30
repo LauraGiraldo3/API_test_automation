@@ -10,11 +10,6 @@ def get_method(context, endpoint: str):
     context.response = api_interactions.get_call(endpoint)
 
 
-@step("the request status code is 200")
-def verify_status_code(context):
-    assert context.response.status_code == 200, "Unexpected status code"
-
-
 @step("the request status code is 404")
 def verify_status_code(context):
     assert context.response.status_code == 404, "Unexpected status code"
