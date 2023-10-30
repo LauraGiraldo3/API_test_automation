@@ -9,7 +9,12 @@ class ApiInteractions:
     def __init__(self):
         self.api_url = os.getenv("URL")
 
-    def get_call(self, endpoint: str):
+    def method_call(self, method: str, endpoint: str, data={}):
+        uri = self.api_url + endpoint
+        response = requests.request(method, uri, data=data)
+        return response
+
+    '''def get_call(self, endpoint: str):
         uri = self.api_url + endpoint
         response = requests.get(uri)
         return response
@@ -32,5 +37,5 @@ class ApiInteractions:
     def delete_call(self, endpoint: str):
         uri = self.api_url + endpoint
         response = requests.delete(uri)
-        return response
+        return response'''
 

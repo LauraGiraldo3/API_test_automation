@@ -7,7 +7,7 @@ api_interactions = ApiInteractions()
 
 @step("the user sends GET call to {endpoint}")
 def get_method(context, endpoint: str):
-    context.response = api_interactions.get_call(endpoint)
+    context.response = api_interactions.method_call("GET", endpoint)
 
 
 @step("the request status code is 404")
